@@ -1,4 +1,5 @@
-package Controllers;
+package com.example.springtodo;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +15,5 @@ class HelloController {
     public String hello() {
         return "Hello from Spring!";
     }
-
-
-
 
 }
