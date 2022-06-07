@@ -1,55 +1,48 @@
 package com.example.springtodo;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class ToDoItem implements Serializable {
+@Table(name = "client")
+public class ToDoItem {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    @Column(nullable = false)
-    private String body;
-    @Column(nullable = true)
-    private String timestamp;
+    @GeneratedValue
+    private Long id;
+    private String name;
 
 
-    public ToDoItem(long id, String body, String timestamp) {
+    public ToDoItem(Long id, String name) {
         this.id = id;
-        this.body = body;
-        this.timestamp = timestamp;
+        this.name = name;
+
     }
 
-    public ToDoItem(String body, String timestamp) {
-        this.body = body;
-        this.timestamp = timestamp;
+    public ToDoItem(String name) {
+        this.name = name;
+
     }
 
     public ToDoItem() {
-
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getBody() {
-        return body;
+    public String getName() {
+        return name;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
-    }
 }
